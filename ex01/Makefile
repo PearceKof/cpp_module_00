@@ -10,8 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= megaphone
-SRCS	= megaphone.cpp
+NAME	= phonebook
+SRCS	= main.cpp Phonebook.cpp Contact.cpp
 	
 CC		= c++
 FLAGS	= -Wall -Wextra -Werror -std=c++98
