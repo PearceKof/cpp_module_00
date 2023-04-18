@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "contact.hpp"
-#include <iomanip>
 
 Contact::Contact() : m_first_name(""), m_last_name(""), m_nickname(""),
 	m_phone_number(""), m_darkest_secret("")
@@ -24,7 +23,7 @@ Contact::~Contact()
 
 std::string	Contact::print_one_row( std::string to_print ) const
 {
-	if ( to_print.size() <= 10 )
+	if (to_print.size() <= 10)
 	{
 		return (to_print);
 	}
@@ -59,18 +58,18 @@ std::string	Contact::readUntilNotEmpty( std::string prompt )
 
 	do
 	{
-		std::cout << prompt;
-		std::getline( std::cin, line );
+		std::cout << prompt << std::flush;
+		std::getline(std::cin, line);
 	}
-	while ( line.empty() );
+	while (line.empty());
 	return (line);
 }
 
 void	Contact::create_new_contact()
 {
-	m_first_name = readUntilNotEmpty( "Enter the first name: " );
-	m_last_name = readUntilNotEmpty( "Enter the last name: " );
-	m_nickname = readUntilNotEmpty( "Enter the nickanme: " );
-	m_phone_number = readUntilNotEmpty( "Enter the phone number: " );
-	m_darkest_secret = readUntilNotEmpty( "Enter the darkest secret: " );
+	m_first_name = readUntilNotEmpty("Enter the first name: ");
+	m_last_name = readUntilNotEmpty("Enter the last name: ");
+	m_nickname = readUntilNotEmpty( "Enter the nickanme: ");
+	m_phone_number = readUntilNotEmpty("Enter the phone number: ");
+	m_darkest_secret = readUntilNotEmpty("Enter the darkest secret: ");
 }

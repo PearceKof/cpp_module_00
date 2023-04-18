@@ -13,9 +13,7 @@
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 
-# include <iostream>
 # include <fstream>
-#include <iomanip>
 # include "Contact.hpp"
 
 class PhoneBook

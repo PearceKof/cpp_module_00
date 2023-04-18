@@ -29,33 +29,29 @@ PhoneBook::~PhoneBook()
 
 void	PhoneBook::search()
 {
-	char	index_of_searched_contact('\0');
-	int		index_integer(0);
 	int		i(0);
 
-	for ( i = 0 ; i < m_number_of_contact ; i++ )
+	for (i = 0 ; i < m_number_of_contact ; i++)
 	{
 		m_contact[i].print_contact_tab( i );
 	}
-
-	if ( i == 0 )
+	if (i == 0)
 	{
 		std::cout << "No contact added in the phone book" << std::endl;
 		std::cout << "Please, use the ADD command and try again" << std::endl;
 		return ;
 	}
-
-	std::cout << "Type the index of the contact you are intersted in: ";
+	std::cout << "Type the index of the contact you are intersted in: " << std::flush;
+	char	index_of_searched_contact('\0');
 	do
 	{
 		index_of_searched_contact = std::getchar();
 	}
-	while ( ( index_of_searched_contact <= 33 ) || ( 126 <= index_of_searched_contact) );
-
-	if ( '1' <= index_of_searched_contact && index_of_searched_contact <= '8' )
+	while (!isprint(index_of_searched_contact));
+	if ('1' <= index_of_searched_contact && index_of_searched_contact <= '8')
 	{
-		index_integer = ( ( int )index_of_searched_contact - 48 );
-		if ( index_integer <= m_number_of_contact )
+		int		index_integer((int)index_of_searched_contact - 48);
+		if (index_integer <= m_number_of_contact)
 		{
 			m_contact[index_integer - 1].print_all_contact_infos();
 		}

@@ -11,13 +11,14 @@
 /* ************************************************************************** */
 
 #include <iostream>
+#include <cstdlib>
 
 int main( int ac, char **av )
 {
 	if (ac == 1)
 	{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		return (0);
+		return (EXIT_SUCCESS);
 	}
 	for(int i = 1 ; av[i]; i++)
 	{
@@ -25,16 +26,16 @@ int main( int ac, char **av )
 		{
 			if (av[i][j] >= 'a' && av[i][j] <= 'z')
 			{
-				std::cout << (char)(toupper((int)av[i][j]));
+				std::cout << (char)(toupper((int)av[i][j])) << std::flush;;
 			}
 			else
 			{
-				std::cout << av[i][j];
+				std::cout << av[i][j] << std::flush;
 			}
 		}
 		if ((ac - 1) > i)
-			std::cout << ' ';
+			std::cout << ' ' << std::flush;;
 	}
 	std::cout << std::endl;
-    return (0);
+    return (EXIT_SUCCESS);
 }

@@ -11,23 +11,24 @@
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
-#include <string>
+#include <cstdlib>
+
 int main( void )
 {
 	PhoneBook	phonebook;
 	std::string	line("");
 
-	while ( line != "EXIT" )
+	while (line != "EXIT")
 	{
 		std::cin >> line;
-		if ( line == "ADD" )
+		if (line == "ADD")
 		{
 			phonebook.add();
 		}
-		else if ( line == "SEARCH" )
+		else if (line == "SEARCH")
 		{
 			phonebook.search();
 		}
 	}
-	return (0);
+	return (EXIT_SUCCESS);
 }
