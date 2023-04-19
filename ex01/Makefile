@@ -11,9 +11,9 @@
 # **************************************************************************** #
 
 NAME	= phonebook
-SRCS	= main.cpp Phonebook.cpp Contact.cpp
+SRCS	= main.cpp PhoneBook.cpp Contact.cpp
 	
-CC		= c++
+CC		= g++
 FLAGS	= -Wall -Wextra -Werror -std=c++98
 RM		= rm -rf
 

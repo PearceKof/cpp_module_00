@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook()
 {
@@ -42,30 +42,22 @@ void	PhoneBook::search()
 		return ;
 	}
 	std::cout << "Type the index of the contact you are intersted in: " << std::flush;
-	char	index_of_searched_contact('\0');
+	std::string	index_of_searched_contact("");
 	do
 	{
-		index_of_searched_contact = std::getchar();
+		std::getline(std::cin, index_of_searched_contact);
 	}
-	while (!isprint(index_of_searched_contact));
-	if ('1' <= index_of_searched_contact && index_of_searched_contact <= '8')
+	while (index_of_searched_contact.empty());
+	if (index_of_searched_contact.size() == 1)
 	{
-		int		index_integer((int)index_of_searched_contact - 48);
-		if (index_integer <= m_number_of_contact)
+		int		index_integer(std::stoi(index_of_searched_contact));
+		if (0 < index_integer && index_integer <= m_number_of_contact)
 		{
 			m_contact[index_integer - 1].print_all_contact_infos();
-		}
-		else
-		{
-			std::cout << "No contact registered there" << std::endl;
+			return ;
 		}
 	}
-	else
-	{
-		std::cout << "Invalid index" << std::endl;
-	}
-
-	return ;
+	std::cout << "Invalid index" << std::endl;
 }
 
 void	PhoneBook::add()

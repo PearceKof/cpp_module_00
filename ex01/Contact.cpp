@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
 Contact::Contact() : m_first_name(""), m_last_name(""), m_nickname(""),
 	m_phone_number(""), m_darkest_secret("")
@@ -58,7 +58,7 @@ std::string	Contact::readUntilNotEmpty( std::string prompt )
 
 	do
 	{
-		std::cout << prompt << std::flush;
+		std::cout << prompt << std::endl;
 		std::getline(std::cin, line);
 	}
 	while (line.empty());

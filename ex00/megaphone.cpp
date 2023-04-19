@@ -37,5 +37,5 @@ int main( int ac, char **av )
 			std::cout << ' ' << std::flush;;
 	}
 	std::cout << std::endl;
-    return (EXIT_SUCCESS);
+    return (0);
 }

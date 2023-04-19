@@ -19,14 +19,28 @@ int main( void )
 
 	while (line != "EXIT")
 	{
-		std::cin >> line;
-		if (line == "ADD")
+		do
 		{
-			phonebook.add();
-		}
-		else if (line == "SEARCH")
+			std::getline(std::cin, line);
+		} while (line.empty());
+		if (line.find_first_not_of(' ') < line.find_last_not_of(' '))
 		{
-			phonebook.search();
+			line = line.substr(line.find_first_not_of(' '), (line.find_last_not_of(' ') + 1));
+			if (line == "ADD")
+			{
+				phonebook.add();
+			}
+			else if (line == "SEARCH")
+			{
+				phonebook.search();
+			}
+			else if (line != "EXIT")
+			{
+				std::cout << "Unkmown command \""<< line << "\"\nPlease use a valid command :" << std::endl;
+				std::cout << "ADD    : add a new contact" << std::endl;
+				std::cout << "SEARCH : looking for someone ?" << std::endl;
+				std::cout << "EXIT   : end the program\n" << std::endl;
+			}
 		}
 	}
 	return (0);
