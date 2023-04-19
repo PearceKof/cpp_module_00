@@ -31,12 +31,14 @@ class Contact
 
 	private :
 
-	std::string m_first_name;
-	std::string m_last_name;
-	std::string m_nickname;
-	std::string m_phone_number;
-	std::string m_darkest_secret;
+	std::string first_name;
+	std::string last_name;
+	std::string nickname;
+	std::string phone_number;
+	std::string darkest_secret;
 
 };
+
+bool	is_valid_input(std::string line);
 
 #endif

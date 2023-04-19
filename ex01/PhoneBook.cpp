@@ -14,8 +14,8 @@
 
 PhoneBook::PhoneBook()
 {
-	m_number_of_contact = 0;
-	m_index_older_contact = 0;
+	this->number_of_contact = 0;
+	this->index_older_contact = 0;
 	std::cout << "Welcome in the phone book :)\n" << std::endl;
 	std::cout << "Please choose an option :" << std::endl;
 	std::cout << "ADD    : add a new contact" << std::endl;
@@ -31,9 +31,9 @@ void	PhoneBook::search()
 {
 	int		i(0);
 
-	for (i = 0 ; i < m_number_of_contact ; i++)
+	for (i = 0 ; i < this->number_of_contact ; i++)
 	{
-		m_contact[i].print_contact_tab( i );
+		this->contact[i].print_contact_tab( i );
 	}
 	if (i == 0)
 	{
@@ -41,19 +41,19 @@ void	PhoneBook::search()
 		std::cout << "Please, use the ADD command and try again" << std::endl;
 		return ;
 	}
-	std::cout << "Type the index of the contact you are intersted in: " << std::flush;
+	std::cout << "Type the index of the contact you are intersted in: " << std::endl;
 	std::string	index_of_searched_contact("");
 	do
 	{
 		std::getline(std::cin, index_of_searched_contact);
 	}
-	while (index_of_searched_contact.empty());
+	while (index_of_searched_contact.empty() || !is_valid_input(index_of_searched_contact));
 	if (index_of_searched_contact.size() == 1)
 	{
 		int		index_integer(std::stoi(index_of_searched_contact));
-		if (0 < index_integer && index_integer <= m_number_of_contact)
+		if (0 < index_integer && index_integer <= this->number_of_contact)
 		{
-			m_contact[index_integer - 1].print_all_contact_infos();
+			this->contact[index_integer - 1].print_all_contact_infos();
 			return ;
 		}
 	}
@@ -65,19 +65,19 @@ void	PhoneBook::add()
 	Contact	new_contact;
 
 	new_contact.create_new_contact();
-	if ( m_number_of_contact >= 8 )
+	if (this->number_of_contact >= 8)
 	{
-		m_contact[m_index_older_contact] = new_contact;
-		m_index_older_contact++;
-		if ( m_index_older_contact >= 8 )
+		this->contact[this->index_older_contact] = new_contact;
+		this->index_older_contact++;
+		if (this->index_older_contact >= 8)
 		{
-			m_index_older_contact = 0;
+			this->index_older_contact = 0;
 		}
 	}
 	else
 	{
-		m_contact[m_number_of_contact] = new_contact;
-		m_number_of_contact++;
+		this->contact[this->number_of_contact] = new_contact;
+		this->number_of_contact++;
 	}
 	return ;
 }

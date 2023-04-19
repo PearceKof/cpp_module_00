@@ -15,6 +15,7 @@
 
 # include <fstream>
 # include "Contact.hpp"
+# include <cctype>
 
 class PhoneBook
 {
@@ -27,9 +28,9 @@ class PhoneBook
 
 	private :
 
-	Contact m_contact[8];
-	int		m_number_of_contact;
-	int		m_index_older_contact;
+	Contact contact[8];
+	int		number_of_contact;
+	int		index_older_contact;
 };
 
 
