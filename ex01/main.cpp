@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
-#include <cstdlib>
+#include "PhoneBook.hpp"
 
 int main( void )
 {
@@ -30,5 +29,5 @@ int main( void )
 			phonebook.search();
 		}
 	}
-	return (EXIT_SUCCESS);
+	return (0);
 }
