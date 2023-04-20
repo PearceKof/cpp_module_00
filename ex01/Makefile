@@ -14,7 +14,7 @@ NAME	= phonebook
 SRCS	= main.cpp PhoneBook.cpp Contact.cpp
 	
 CC		= g++
-FLAGS	= -Wall -Wextra -Werror -std=c++98
+FLAGS	= -Wall -Wextra -Werror -std=c++11
 RM		= rm -rf
 
 GREEN		=	\e[92;5;118m

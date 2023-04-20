@@ -49,24 +49,12 @@ void	Contact::print_all_contact_infos( void ) const
 	std::cout << "darkest secret: " << this->darkest_secret << std::endl;
 }
 
-std::string	Contact::readUntilNotEmpty( std::string prompt )
-{
-	std::string	line;
-
-	std::cout << prompt << std::endl;
-	do
-	{
-		std::getline(std::cin, line);
-	} while (line.empty() || !is_valid_input(line));
-	return (line);
-}
-
 void	Contact::create_new_contact()
 {
-	this->first_name = readUntilNotEmpty("Enter the first name: ");
-	this->last_name = readUntilNotEmpty("Enter the last name: ");
-	this->nickname = readUntilNotEmpty( "Enter the nickanme: ");
-	this->phone_number = readUntilNotEmpty("Enter the phone number: ");
-	this->darkest_secret = readUntilNotEmpty("Enter the darkest secret: ");
+	this->first_name = get_and_trim_line("Enter the first name: ");
+	this->last_name = get_and_trim_line("Enter the last name: ");
+	this->nickname = get_and_trim_line( "Enter the nickanme: ");
+	this->phone_number = get_and_trim_line("Enter the phone number: ");
+	this->darkest_secret = get_and_trim_line("Enter the darkest secret: ");
 	std::cout << this->first_name << " succesfully added to the phonebook" << std::endl;
 }

@@ -40,5 +40,6 @@ class Contact
 };
 
 bool	is_valid_input(std::string line);
-
+std::string	get_and_trim_line();
+std::string	get_and_trim_line(std::string prompt);
 #endif

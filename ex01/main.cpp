@@ -14,7 +14,49 @@
 
 std::string	get_and_trim_line()
 {
-	
+	std::string line;
+	std::string	trimmed_line;
+
+	do
+	{
+			std::getline(std::cin, line);
+	} while (line.empty() || !is_valid_input(line));
+	size_t	begin(line.find_first_not_of(' ')), end(line.find_last_not_of(' '));
+	if (begin == line.npos && end == line.npos)
+		return (line);
+	if (begin == line.npos)
+	{
+		begin = 0;
+	}
+	if (end == line.npos)
+	{
+		end = line.length();
+	}
+	return (line.substr(begin, end + 1));
+}
+
+std::string	get_and_trim_line( std::string prompt )
+{
+	std::string line;
+	std::string	trimmed_line;
+
+	std::cout << prompt << std::endl;
+	do
+	{
+			std::getline(std::cin, line);
+	} while (line.empty() || !is_valid_input(line));
+	size_t	begin(line.find_first_not_of(' ')), end(line.find_last_not_of(' '));
+	if (begin == line.npos && end == line.npos)
+		return (line);
+	if (begin == line.npos)
+	{
+		begin = 0;
+	}
+	if (end == line.npos)
+	{
+		end = line.length();
+	}
+	return (line.substr(begin, end + 1));
 }
 
 bool	is_valid_input(std::string line)
@@ -40,10 +82,7 @@ int main( void )
 
 	while (line != "EXIT")
 	{
-		do
-		{
-			std::getline(std::cin, line);
-		} while (line.empty() || !is_valid_input(line));
+		line = get_and_trim_line();
 		if (line == "ADD")
 		{
 			phonebook.add();
@@ -60,5 +99,5 @@ int main( void )
 			std::cout << "EXIT   : end the program\n" << std::endl;
 		}
 	}
-	return (EXIT_SUCCESS);
+	return (0);
 }

@@ -12,7 +12,7 @@
 
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
-
+# include <string>
 # include <fstream>
 # include "Contact.hpp"
 # include <cctype>
