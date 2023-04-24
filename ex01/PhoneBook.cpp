@@ -25,12 +25,16 @@ PhoneBook::PhoneBook()
 
 PhoneBook::~PhoneBook()
 {
+	std::cout << "Phone book destroyed" << std::endl;
 }
 
 void	PhoneBook::search()
 {
 	int		i(0);
 
+	std::cout << " __________ __________ __________ __________ " << std::endl;
+	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
+	std::cout << " __________ __________ __________ __________ " << std::endl;
 	for (i = 0 ; i < this->number_of_contact ; i++)
 	{
 		this->contact[i].print_contact_tab( i );
