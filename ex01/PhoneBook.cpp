@@ -12,10 +12,8 @@
 
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook()
+PhoneBook::PhoneBook() : number_of_contact(0), index_older_contact(0)
 {
-	this->number_of_contact = 0;
-	this->index_older_contact = 0;
 	std::cout << "Welcome in the phone book :)\n" << std::endl;
 	std::cout << "Please choose an option :" << std::endl;
 	std::cout << "ADD    : add a new contact" << std::endl;

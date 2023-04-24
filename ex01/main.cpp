@@ -37,7 +37,7 @@ std::string	get_and_trim_line()
 
 std::string	get_and_trim_line( std::string prompt )
 {
-	std::string line;
+	std::string	line;
 	std::string	trimmed_line;
 
 	std::cout << prompt << std::endl;
