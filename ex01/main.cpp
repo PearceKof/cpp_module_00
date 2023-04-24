@@ -23,7 +23,9 @@ std::string	get_and_trim_line()
 	} while (line.empty() || !is_valid_input(line));
 	size_t	begin(line.find_first_not_of(' ')), end(line.find_last_not_of(' '));
 	if (begin == line.npos && end == line.npos)
+	{
 		return (line);
+	}
 	if (begin == line.npos)
 	{
 		begin = 0;
@@ -71,7 +73,9 @@ bool	is_valid_input(std::string line)
 			is_only_space = 0;
 	}
 	if (is_only_space == 1)
+	{
 		return (0);
+	}
 	return (1);
 }
 

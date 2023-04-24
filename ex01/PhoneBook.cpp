@@ -30,19 +30,18 @@ void	PhoneBook::search()
 {
 	int		i(0);
 
+	if (i < this->number_of_contact == 0)
+	{
+		std::cout << "No contact added in the phone book" << std::endl;
+		std::cout << "Please, use the ADD command and try again" << std::endl;
+		return ;
+	}
 	std::cout << " __________ __________ __________ __________ " << std::endl;
 	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
 	std::cout << " __________ __________ __________ __________ " << std::endl;
 	for (i = 0 ; i < this->number_of_contact ; i++)
 	{
 		this->contact[i].print_contact_tab( i );
-	}
-
-	if (i == 0)
-	{
-		std::cout << "No contact added in the phone book" << std::endl;
-		std::cout << "Please, use the ADD command and try again" << std::endl;
-		return ;
 	}
 
 	std::string	index_of_searched_contact(get_and_trim_line("Type the index of the contact you are intersted in: "));
@@ -78,5 +77,4 @@ void	PhoneBook::add()
 		this->contact[this->number_of_contact] = new_contact;
 		this->number_of_contact++;
 	}
-	return ;
 }
