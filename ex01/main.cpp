@@ -14,7 +14,7 @@
 
 std::string	get_and_trim_line()
 {
-	std::string line;
+	std::string	line;
 	std::string	trimmed_line;
 
 	do
@@ -75,7 +75,7 @@ bool	is_valid_input(std::string line)
 	return (1);
 }
 
-int main( void )
+int	main( void )
 {
 	PhoneBook	phonebook;
 	std::string	line("");

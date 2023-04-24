@@ -11,9 +11,8 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstdlib>
 
-int main( int ac, char **av )
+int	main( int ac, char **av )
 {
 	if (ac == 1)
 	{
