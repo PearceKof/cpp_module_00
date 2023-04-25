@@ -47,7 +47,7 @@ void	PhoneBook::search()
 	std::string	index_of_searched_contact(get_and_trim_line("Type the index of the contact you are intersted in: "));
 	if (index_of_searched_contact.size() == 1)
 	{
-		int		index_integer(std::stoi(index_of_searched_contact));
+		int		index_integer(atoi(index_of_searched_contact.c_str()));
 		if (0 < index_integer && index_integer <= this->number_of_contact)
 		{
 			this->contact[index_integer - 1].print_all_contact_infos();
