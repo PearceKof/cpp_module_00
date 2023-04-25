@@ -38,7 +38,7 @@ void	PhoneBook::search()
 	}
 	std::cout << " __________ __________ __________ __________ " << std::endl;
 	std::cout << "|     index|first name| last name|  nickname|" << std::endl;
-	std::cout << " __________ __________ __________ __________ " << std::endl;
+	std::cout << " ---------- ---------- ---------- ---------- " << std::endl;
 	for (i = 0 ; i < this->number_of_contact ; i++)
 	{
 		this->contact[i].print_contact_tab( i );
@@ -54,7 +54,6 @@ void	PhoneBook::search()
 			return ;
 		}
 	}
-
 	std::cout << "Invalid index" << std::endl;
 }
 

@@ -37,7 +37,6 @@ void	Contact::print_contact_tab( int index ) const
 	std::cout << "|" << std::setw(10) << print_one_row(this->last_name);
 	std::cout << "|" << std::setw(10) << print_one_row(this->nickname);
 	std::cout << "|" << std::endl;
-	std::cout << " __________ __________ __________ __________ " << std::endl;
 }
 
 void	Contact::print_all_contact_infos( void ) const

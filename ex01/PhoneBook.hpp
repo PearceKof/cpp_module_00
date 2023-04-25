@@ -26,7 +26,7 @@ class PhoneBook
 
 	private :
 
-	Contact contact[8];
+	Contact	contact[8];
 	int		number_of_contact;
 	int		index_older_contact;
 };

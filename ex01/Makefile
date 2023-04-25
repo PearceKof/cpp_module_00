@@ -15,6 +15,7 @@ SRCS	= main.cpp PhoneBook.cpp Contact.cpp
 	
 CC		= g++
 FLAGS	= -Wall -Wextra -Werror -std=c++98
+RM		= rm -rf
 
 GREEN		=	\e[92;5;118m
 YELLOW		=	\e[93;5;226m
@@ -32,11 +33,11 @@ $(NAME):
 	@printf "$(GREEN)    - Executable ready.\n$(RESET)"
 
 clean:
-	@rm $(NAME)
+	@$(RM) $(NAME)
 	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
 
 fclean:
-	@rm $(NAME)
+	@$(RM) $(NAME)
 	@printf "$(YELLOW)    - Executable removed.$(RESET)\n"
 
 re: clean all

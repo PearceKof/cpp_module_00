@@ -21,20 +21,9 @@ std::string	get_and_trim_line()
 	{
 			std::getline(std::cin, line);
 	} while (line.empty() || !is_valid_input(line));
-	size_t	begin(line.find_first_not_of(' ')), end(line.find_last_not_of(' '));
-	if (begin == line.npos && end == line.npos)
-	{
-		return (line);
-	}
-	if (begin == line.npos)
-	{
-		begin = 0;
-	}
-	if (end == line.npos)
-	{
-		end = line.length();
-	}
-	return (line.substr(begin, end + 1));
+	size_t	begin(line.find_first_not_of(' ')), size(line.find_last_not_of(' ') + 1);
+	size = size - begin;
+	return (line.substr(begin, size));
 }
 
 std::string	get_and_trim_line( std::string prompt )
@@ -47,18 +36,9 @@ std::string	get_and_trim_line( std::string prompt )
 	{
 			std::getline(std::cin, line);
 	} while (line.empty() || !is_valid_input(line));
-	size_t	begin(line.find_first_not_of(' ')), end(line.find_last_not_of(' '));
-	if (begin == line.npos && end == line.npos)
-		return (line);
-	if (begin == line.npos)
-	{
-		begin = 0;
-	}
-	if (end == line.npos)
-	{
-		end = line.length();
-	}
-	return (line.substr(begin, end + 1));
+	size_t	begin(line.find_first_not_of(' ')), size(line.find_last_not_of(' ') + 1);
+	size = size - begin;
+	return (line.substr(begin, size));
 }
 
 bool	is_valid_input(std::string line)
